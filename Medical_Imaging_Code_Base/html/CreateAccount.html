@@ -1,0 +1,69 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+    <body>
+      <nav class="navbar navbar-default">
+          <div class="container-fluid">
+              <ul class="nav navbar-nav">
+                  <li><a href="login"><b>Train</b></a></li>
+                  <li><a href="information"><b>Information</b></a></li>
+                  <li><a href="aboutUs"><b>About us</b></a></li>
+                  <li><a href="faqs"><b>FAQs</b></a></li>
+              </ul>
+              <h3 id= "usernameSlot" ><h3>
+          </div>
+      </nav>
+      <br><br>
+	  <h1>Create Account</h1><br>
+	  <div class="container">
+          <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4">
+                  <div class="panel panel-default">
+                      <form name="login" method="post" action="/postLogin">
+                          <p></p>
+                          <table class="table table-bordered table-hover">
+                              <tbody>
+                                  <tr>
+                                      <td class="col-md-6">Username</td>
+                                      <td class="col-md-6">
+                                          <div class="form-group">
+                                              <input type="text" class="form-control" name="username" required>
+                                          </div>
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td class="col-md-6">Password</td>
+                                      <td class="col-md-6">
+                                          <div class="form-group">
+                                              <input type="text" class="form-control" name="password" required>
+                                          </div>
+                                      </td>
+                                  </tr>
+								  <tr>
+                                      <td class="col-md-6">Confirm Password</td>
+                                      <td class="col-md-6">
+                                          <div class="form-group">
+                                              <input type="text" class="form-control" name="password" required>
+                                          </div>
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td class="col-md-6"></td>
+                                      <td class="col-md-6">
+                                          <input type="submit" value="Create">
+                                      </td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </form>
+                  </div>
+              </div>
+              <div class="col-md-4"></div>
+          </div>
+      </div>
+	</body>
+<html>
