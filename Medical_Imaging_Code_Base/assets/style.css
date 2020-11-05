@@ -1,0 +1,11 @@
+
+.xray {
+	width: 100%;
+	height: auto;
+}
+.imageContainer{
+	width:50%;
+	margin:0;
+	padding:0;
+	float: left;
+}

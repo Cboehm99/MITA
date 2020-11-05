@@ -13,6 +13,7 @@ var fs = require("fs");
 // helps in managing user sessions
 var session = require('express-session');
 
+app.use(express.static(__dirname + '/assets'));
 
 // server listens on port 9999 for incoming connections
 app.listen(process.env.PORT || 9999, () => console.log('Listening on port 9999'));
