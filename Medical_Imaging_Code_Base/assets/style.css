@@ -8,4 +8,28 @@
 	margin:0;
 	padding:0;
 	float: left;
+	position: relative;
+}
+
+h1 {
+	margin-left: 3%;
+
+}
+
+h3 {
+	margin-left: 6%;
+}
+
+p, ul, h3 {
+	margin-left: 6%;
+}
+
+.learning-info {
+	width: 66%;
+	margin-left: 10%;
+}
+
+button {
+	margin-right: 3%; 
+	float: right;
 }

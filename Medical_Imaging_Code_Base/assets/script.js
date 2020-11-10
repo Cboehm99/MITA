@@ -11,11 +11,16 @@ function selectImage(){
 		var localizationBox = document.createElement('div');
 		document.getElementById("cancerImageContainer").appendChild(localizationBox);
 		localizationBox.style.position = 'absolute';
-		localizationBox.style.height = '50px';
-		localizationBox.style.width= '50px';
-		localizationBox.style.left = '20%';
-		localizationBox.style.top = '20%';
+		localizationBox.style.height = '0.73%';
+		localizationBox.style.width= '0.73%';
+		localizationBox.style.left = '79.79%';
+		localizationBox.style.top = '33.79%';
 		localizationBox.style.border = 'thick solid #CFFF04';
 		document.getElementById("prompt").innerHTML = "The cancer is now highlighted on the image. Click next to move to the next trial!";
+		
 	}
+}
+
+function nextImage(){
+	
 }
