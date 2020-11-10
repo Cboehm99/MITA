@@ -68,6 +68,20 @@ app.get('/information',function(req, res) {
 	
 });
 
+// Settings page
+app.get('/settings',function(req, res) {
+
+	res.sendFile(__dirname + '/html/Settings.html');
+
+});
+
+// Progress page
+app.get('/progress',function(req, res) {
+
+	res.sendFile(__dirname + '/html/Progress.html');
+
+});
+
 // Post response for when a user submits the create account form
 app.post('/postLogin', function(req, res) {
 	
