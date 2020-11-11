@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<body>
+  </head>
+    <body>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <ul class="nav navbar-nav">
@@ -37,7 +37,114 @@
             <h3 id= "usernameSlot" ><h3>
         </div>
     </nav>
-    <br><br>
-    <h1>Progress</h1>
-</body>
+      <br><br>
+	  <h1>Your Progress!</h1><br>
+	  <div class="container">
+          <div class="row">
+              <div class="col-md-4">
+                  <div class="panel panel-default">
+                    <p></p>
+                    <!- Below is future script that may be adapted to pull account/usage info from a database?->
+                    <!-- Sreenikethan I https://stackoverflow.com/questions/41935156/how-to-add-data-to-a-table-in-html->
+                    <!- Made a similiar script in stackoverflow that I am adapting below
+                    <script language="javascript">
+                      function insertData() {
+                          var date = document.getElementById("inputCustomerName").value;
+                          var scanIdAcc = document.getElementById("inputCustomerAddress").value;
+                          var locAcc = document.getElementById("inputCustomerTelephone").value;
+                          document.getElementById("insertionPoint").innerHTML += "<tr><td>" + name + "</td><td>" + address + "</td><td>" + telephone + "</td></tr>";
+
+                          // The below part is to clear the values after the entry is added.
+                          document.getElementById("inputCustomerName").value = "";
+                          document.getElementById("inputCustomerAddress").value = "";
+                          document.getElementById("inputCustomerTelephone").value = "";
+                      }
+                  </script>
+                -->
+                    <table id = "progress table" class="center"> <!- might need to add some of these: table table-bordered table-hover ?->
+                      <thead>
+                        <tr>
+                          <th class="col-md-3">Date</th>
+                          <th class="col-md-3">Scan Identification Accuracy</th>
+                          <th class="col-md-3">Localization Accuracy</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <!- Need to find a way to generate more rows automatically, currently hardcoded->
+                        <tr>
+                          <td class="col-md-3">
+                            <!-Add the date script here->
+                            <!-Hardcode example below->
+                            10/21/2020
+                          </td>
+                          <td class="col-md-3">
+                            <!-Add Scan Identification Accuracy here->
+                            <!-Hardcode example below->
+                            33.3%
+                          </td>
+                          <td class="col-md-3">
+                            <!-Add Localization Accuracy here->
+                            <!-Hardcode example below->
+                            11.1%
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="col-md-3">
+                            <!-Add the date script here->
+                            <!-Hardcode example below->
+                            10/24/2020
+                          </td>
+                          <td class="col-md-3">
+                            <!-Add Scan Identification Accuracy here->
+                            <!-Hardcode example below->
+                            42.7%
+                          </td>
+                          <td class="col-md-3">
+                            <!-Add Localization Accuracy here->
+                            <!-Hardcode example below->
+                            17.3%
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="col-md-3">
+                            <!-Add the date script here->
+                            <!-Hardcode example below->
+                            10/31/2020
+                          </td>
+                          <td class="col-md-3">
+                            <!-Add Scan Identification Accuracy here->
+                            <!-Hardcode example below->
+                            44.8%
+                          </td>
+                          <td class="col-md-3">
+                            <!-Add Localization Accuracy here->
+                            <!-Hardcode example below->
+                            21.7%
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="col-md-3">
+                            <!-Add the date script here->
+                            <!-Hardcode example below->
+                            11/05/2020
+                          </td>
+                          <td class="col-md-3">
+                            <!-Add Scan Identification Accuracy here->
+                            <!-Hardcode example below->
+                            59.8%
+                          </td>
+                          <td class="col-md-3">
+                            <!-Add Localization Accuracy here->
+                            <!-Hardcode example below->
+                            37.3%
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+              </div>
+              <!--<div class="col-md-4"></div>-->
+          </div>
+      </div>
+	</body>
 </html>
