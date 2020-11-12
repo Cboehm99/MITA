@@ -42,8 +42,8 @@
             </div>
         </nav>
         <h1>Train</h1>
-        <button>Quit</button>
-        <button>Next ></button>
+        <button class="train-button" onclick="nextImage();">Next ></button>
+		<button class="train-button">Quit</button>
         <div>
             <h3 id="prompt">Please click on the image you believe contains cancer!</h3>
         </div>
@@ -51,7 +51,7 @@
             <img class="xray" id="cancerousImage" onclick="selectImage()" src="/cancerChest1.jpg">
          </div>
         <div class="imageContainer">
-            <img class="xray" onclick="selectImage()" src="/normalChest1.jpg">
+            <img class="xray" id="cancerousImageII" onclick="selectImage()" src="/normalChest1.jpg">
          </div>
     </body>
 </html>
