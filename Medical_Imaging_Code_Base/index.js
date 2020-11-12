@@ -13,6 +13,12 @@ var fs = require("fs");
 // helps in managing user sessions
 var session = require('express-session');
 
+app.use(session({
+  secret: "medical-img",
+  saveUninitialized: true,
+  resave: false}
+));
+
 app.use(express.static(__dirname + '/assets'));
 
 // server listens on port 9999 for incoming connections
@@ -35,9 +41,12 @@ app.get('/login',function(req, res) {
 
 // work around for current lack of a true login session thing
 app.get('/train',function(req, res) {
-	
-	res.sendFile(__dirname + '/html/Train.html');
-	
+	if(req.session.loggedIn){
+		res.sendFile(__dirname + '/html/Train.html');
+	}
+	else{
+		res.sendFile(__dirname + '/html/Login.html');
+	}
 });
 
 // About Us page
@@ -82,9 +91,14 @@ app.get('/progress',function(req, res) {
 
 });
 
+app.get('/logout', function(req, res) {
+  req.session.destroy();
+  res.redirect('/login');
+});
+
 // Post response for when a user submits the create account form
 app.post('/postLogin', function(req, res) {
-	
+	req.session.loggedIn = 1;
     res.redirect('/train');
 
 });

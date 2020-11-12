@@ -12,29 +12,60 @@
 }
 
 h1 {
-	margin-left: 3%;
+	margin-left: 6%;
 
 }
 
 h3 {
-	margin-left: 6%;
-}
-
-p, ul, h3 {
-	margin-left: 6%;
-}
-
-.learning-info {
-	width: 66%;
 	margin-left: 10%;
+}
+
+
+
+p {
+	width: 66%;
+	margin-left: 8%;
+	font-size: 18px;
 }
 
 button {
 	margin-right: 3%;
 	float: right;
+	border: none;
 }
 
 .center {
 	margin-left: auto;
 	margin-right: auto;
+	border: solid;
+}
+
+.progTable{
+	border: solid;
+}
+
+.create-account {
+	margin-left: 15%;
+	border: none;
+	background: none;
+	text-decoration: underline;
+}
+
+.panel-default {
+	border: none;
+	box-shadow: none;
+}
+
+.account-info{
+	border: none;
+	margin-left: 10%;
+}
+
+.info-link{
+	margin-left: 8%;
+}
+
+.info-list {
+	margin-left: 8%;
+	font-size: 18px;
 }

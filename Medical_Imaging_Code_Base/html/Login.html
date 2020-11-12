@@ -12,7 +12,7 @@
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <ul class="nav navbar-nav">
-                <li><a href="login"><b>Train</b></a></li>
+                <li><a href="train"><b>Train</b></a></li>
                 <li><a href="information"><b>Information</b></a></li>
                 <li><a href="aboutUs"><b>About us</b></a></li>
                 <li><a href="faqs"><b>FAQs</b></a></li>
@@ -29,7 +29,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="settings">Settings</a></li>
                         <li><a href="progress">Progress</a></li>
-                        <li><a href="#">Log Out</a></li>
+                        <li><a href="logout">Log Out</a></li>
                     </ul>
                 </li>
             </ul>
@@ -39,33 +39,29 @@
     <br><br>
 	<h1>Login</h1><br>
 	<p>Please login to continue training or create an account to start!</p>
-	<div class="container">
-        <div class="row">
-              <div class="col-md-4"></div>
-              <div class="col-md-4">
-                  <div class="panel panel-default">
+	<br>
+	<div>
                       <form name="login" method="post" action="/postLogin">
                           <p></p>
-                          <table class="table table-bordered table-hover">
+                          <table class="account-info">
                               <tbody>
                                   <tr>
-                                      <td class="col-md-6">Username</td>
-                                      <td class="col-md-6">
-                                          <div class="form-group">
+                                      <td class="col-md-6">Username
+										  <div class="form-group">
                                               <input type="text" class="form-control" name="username" required>
                                           </div>
-                                      </td>
+									  </td>
+                                     
                                   </tr>
                                   <tr>
-                                      <td class="col-md-6">Password</td>
-                                      <td class="col-md-6">
-                                          <div class="form-group">
-                                              <input type="text" class="form-control" name="password" required>
+                                      <td class="col-md-6">Password
+										  <div class="form-group">
+                                              <input type="text" class="form-control" name="username" required>
                                           </div>
-                                      </td>
+									  </td>
+                                     
                                   </tr>
                                   <tr>
-                                      <td class="col-md-6"></td>
                                       <td class="col-md-6">
                                           <input type="submit" value="Submit">
                                       </td>
@@ -73,11 +69,7 @@
                               </tbody>
                           </table>
                       </form>
-					  <form action="/createAccountPage"><input type="submit" value="Create Account"></form>
-                  </div>
-              </div>
-              <div class="col-md-4"></div>
-          </div>
+					  <form action="/createAccountPage"><input class="create-account" type="submit" value="Create Account"></form>
       </div>
 </body>
 </html>
