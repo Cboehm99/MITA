@@ -8,12 +8,19 @@
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="style.css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#defaultCheck1").change(function () {
+                    $('input[type="button"], button').disable(false);
+                });
+            });
+        </script>
     </head>
     <script src="script.js"></script>
     <body>
         <nav class="navbar navbar-default">
             <div class="container-fluid">
-				
+
                 <ul class="nav navbar-nav">
                     <li><a href="train"><b>Train</b></a></li>
                    <li><a href="information"><b>Information</b></a></li>

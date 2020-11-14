@@ -96,10 +96,24 @@ app.get('/logout', function(req, res) {
   res.redirect('/login');
 });
 
+app.get('/disclaimer', function(req, res) {
+
+	res.sendFile(__dirname + '/html/Disclaimer.html');
+
+});
+
+
 // Post response for when a user submits the create account form
 app.post('/postLogin', function(req, res) {
 	req.session.loggedIn = 1;
     res.redirect('/train');
 
 });
+
+// Post response
+app.post('/postDisclaimLogin', function(req, res) {
+	req.session.clickedDisclaimer = 1;
+	res.redirect('/login');
+});
+
 
