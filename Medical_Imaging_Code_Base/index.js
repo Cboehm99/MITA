@@ -116,4 +116,7 @@ app.post('/postDisclaimLogin', function(req, res) {
 	res.redirect('/login');
 });
 
-
+app.post('/postDisclaimCreate', function(req, res) {
+	req.session.clickedDisclaimer = 1;
+	res.redirect('/createAccountPage');
+});
