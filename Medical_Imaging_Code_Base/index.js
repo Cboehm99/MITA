@@ -1,6 +1,9 @@
 // include the express module
 var express = require("express");
 
+// keeps track of whether or not a user is logged in
+var loggedIn = false;
+
 // create an express application
 var app = express();
 
@@ -97,15 +100,18 @@ app.get('/logout', function(req, res) {
 });
 
 app.get('/disclaimer', function(req, res) {
-
-	res.sendFile(__dirname + '/html/Disclaimer.html');
-
+	if(loggedIn) {
+		res.sendFile(__dirname + '/html/Train.html');
+	} else {
+		res.sendFile(__dirname + '/html/Disclaimer.html');
+	}
 });
 
 
 // Post response for when a user submits the create account form
 app.post('/postLogin', function(req, res) {
 	req.session.loggedIn = 1;
+	loggedIn = true;
     res.redirect('/train');
 
 });
