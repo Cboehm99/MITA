@@ -48,7 +48,7 @@ app.get('/train',function(req, res) {
 		res.sendFile(__dirname + '/html/Train.html');
 	}
 	else{
-		res.sendFile(__dirname + '/html/Login.html');
+		res.sendFile(__dirname + '/html/Disclaimer.html');
 	}
 });
 
@@ -95,34 +95,24 @@ app.get('/progress',function(req, res) {
 });
 
 app.get('/logout', function(req, res) {
-  req.session.destroy();
-  res.redirect('/login');
-});
-
-app.get('/disclaimer', function(req, res) {
-	if(loggedIn) {
-		res.sendFile(__dirname + '/html/Train.html');
-	} else {
-		res.sendFile(__dirname + '/html/Disclaimer.html');
-	}
+	req.session.destroy();
+	res.redirect('/login');
 });
 
 
 // Post response for when a user submits the create account form
 app.post('/postLogin', function(req, res) {
 	req.session.loggedIn = 1;
-	loggedIn = true;
     res.redirect('/train');
 
 });
 
-// Post response
+// Post agreeing to disclaimer and choosing login
 app.post('/postDisclaimLogin', function(req, res) {
-	req.session.clickedDisclaimer = 1;
 	res.redirect('/login');
 });
 
+// Post agreeing to disclaimer and choosing to create an account
 app.post('/postDisclaimCreate', function(req, res) {
-	req.session.clickedDisclaimer = 1;
 	res.redirect('/createAccountPage');
 });
