@@ -1,7 +1,7 @@
 var imageSet = 0;
 var imageSelected = false;
 var leftImageCancerous = true;
-var leftImage = false;
+var leftImage = false; //true if left image is clicked
 var hasFinished = false; //Avoid cheating
 
 // Function called by left image to allow other functions to know what image is being used
