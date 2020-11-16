@@ -28,7 +28,7 @@ p {
 	font-size: 18px;
 }
 
-button {
+.train-button {
 	margin-right: 3%;
 	float: right;
 	border: none;
@@ -82,3 +82,6 @@ button {
 	text-align:center;
 }
 
+#next-button{
+	display: none;
+}

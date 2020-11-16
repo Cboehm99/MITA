@@ -28,23 +28,35 @@ function selectImage(){
 	else
 		imageDiv = document.getElementById("rightImage");
 	imageDiv.style.border = 'thick solid #CFFF04';
-	document.getElementById("prompt").innerHTML = "The image containing the cancer is highlighted yellow. Please attempt to click on the cancerous spot.";
 	imageSelected = true;
 	var localizationBox = document.createElement('div');
-	if(leftImageCancerous)
+	if(leftImageCancerous){
+		// hard coded styling will need to be changed if we want to pull from db
 		document.getElementById("leftImageContainer").appendChild(localizationBox);
-	else
+		localizationBox.style.display = 'block';
+		localizationBox.style.position = 'absolute';
+		localizationBox.style.height = '9%';
+		localizationBox.style.width= '9%';
+		localizationBox.style.left = '74.79%';
+		localizationBox.style.top = '29.79%';
+		localizationBox.style.border = 'transparent'; //Invisible
+		localizationBox.id = 'localizationBox';
+		localizationBox.onclick = hitLocalization; //User clicked the right spot
+	}
+	else {
+		// hard coded styling will need to be changed if we want to pull from db
 		document.getElementById("rightImageContainer").appendChild(localizationBox);
-	localizationBox.style.display = 'block';
-	localizationBox.style.position = 'absolute';
-	localizationBox.style.height = '9%';
-	localizationBox.style.width= '9%';
-	localizationBox.style.left = '74.79%';
-	localizationBox.style.top = '29.79%';
-	localizationBox.style.border = 'transparent'; //Invisible
-	localizationBox.id = 'localizationBox';
-	localizationBox.onclick = hitLocalization; //User clicked the right spot
-	document.getElementById("prompt").innerHTML = "The cancer is now highlighted on the image. Click next to move to the next trial!";
+		localizationBox.style.display = 'block';
+		localizationBox.style.position = 'absolute';
+		localizationBox.style.height = '9%';
+		localizationBox.style.width= '9%';
+		localizationBox.style.left = '59.12%';
+		localizationBox.style.top = '17%';
+		localizationBox.style.border = 'transparent'; //Invisible
+		localizationBox.id = 'localizationBox';
+		localizationBox.onclick = hitLocalization; //User clicked the right spot
+	}
+	
 	imageSelected = true;
 }
 
@@ -56,15 +68,15 @@ function checkIfCorrectAnswer() {
 		//Checks what image was clicked, then if it was the cancerous image, then sets the appropriate feedback
 		if (leftImage) {
 			if(leftImageCancerous)
-				document.getElementById("textFeedbackL").innerHTML = "Great! right image!";
+				document.getElementById("prompt").innerHTML = "Great! right image! The image containing the cancer is highlighted yellow. Please attempt to click on the cancerous spot."
 			else
-				document.getElementById("textFeedbackL").innerHTML = "Sorry, wrong image!";
+				document.getElementById("prompt").innerHTML = "Sorry, wrong image! The image containing the cancer is highlighted yellow. Please attempt to click on the cancerous spot."
 		}
 		else { //Right image
 			if(!leftImageCancerous)
-				document.getElementById("textFeedbackR").innerHTML = "Great! right image!";
+				document.getElementById("prompt").innerHTML = "Great! right image! The image containing the cancer is highlighted yellow. Please attempt to click on the cancerous spot."
 			else
-				document.getElementById("textFeedbackR").innerHTML = "Sorry, wrong image!";
+				document.getElementById("prompt").innerHTML = "Sorry, wrong image! The image containing the cancer is highlighted yellow. Please attempt to click on the cancerous spot."
 		}
 		selectImage(); //Creates localizationBox
 	}
@@ -73,21 +85,25 @@ function checkIfCorrectAnswer() {
 		localBox.style.border = 'thick solid #CFFF04';
 		if (leftImage) {
 			if(leftImageCancerous){
-				document.getElementById("textFeedbackL").innerHTML = "Sorry, you chose the wrong localization!";
+				document.getElementById("prompt").innerHTML = "Sorry, you chose the wrong localization! The cancer is now highlighted on the image. Click next to move to the next trial!";
 			}
 			else {
-				document.getElementById("textFeedbackR").innerHTML = "";
-				document.getElementById("textFeedbackL").innerHTML = "Sorry, wrong image. The localization is always within the highlighted picture";
+				document.getElementById("prompt").innerHTML = "Sorry, you chose the wrong image! The cancer is now highlighted on the image. Click next to move to the next trial!"
+
 			}
 		}
 		else { //Right image
 			if(!leftImageCancerous) //right image is cancerous
-				document.getElementById("textFeedbackR").innerHTML = "Sorry, you chose the wrong localization!";
+				document.getElementById("prompt").innerHTML = "Sorry, you chose the wrong localization! The cancer is now highlighted on the image. Click next to move to the next trial!";
 			else {
-				document.getElementById("textFeedbackL").innerHTML = "";
-				document.getElementById("textFeedbackR").innerHTML = "Sorry, wrong image. The localization is always within the highlighted picture";
+				document.getElementById("prompt").innerHTML = "Sorry, you chose the wrong image! The cancer is now highlighted on the image. Click next to move to the next trial!"
 			}
 		}
+		
+		// show next button
+		var next_button = document.getElementById("next-button");
+		next_button.style.display = "block";
+		
 		//Ends Round
 		hasFinished = true;
 	}
@@ -99,24 +115,24 @@ function hitLocalization() {
 		localizationBox.style.border = 'thick solid #CFFF04';
 		if (leftImage) {
 			if(leftImageCancerous){
-				document.getElementById("textFeedbackR").innerHTML = "";
-				document.getElementById("textFeedbackL").innerHTML = "Steller! You got the localization correct!";
+				document.getElementById("prompt").innerHTML = "Steller! You got the localization correct! The cancer is now highlighted on the image. Click next to move to the next trial!";
 			}
 			else {
-				document.getElementById("textFeedbackR").innerHTML = "";
-				document.getElementById("textFeedbackL").innerHTML = "Sorry, wrong image. The localization is always within the highlighted picture";
+				document.getElementById("prompt").innerHTML = "Sorry, you chose the wrong image! The cancer is now highlighted on the image. Click next to move to the next trial!"
 			}
 		}
 		else { //Right image
 			if(!leftImageCancerous) { //correct image
-				document.getElementById("textFeedbackL").innerHTML = "";
-				document.getElementById("textFeedbackR").innerHTML = "Steller! You got the localization correct!";
+				document.getElementById("prompt").innerHTML = "Steller! You got the localization correct! The cancer is now highlighted on the image. Click next to move to the next trial!";
 			}
 			else {
-				document.getElementById("textFeedbackL").innerHTML = "";
-				document.getElementById("textFeedbackR").innerHTML = "Sorry, wrong image. The localization is always within the highlighted picture";
+				document.getElementById("prompt").innerHTML = "Sorry, you chose the wrong image! The cancer is now highlighted on the image. Click next to move to the next trial!"
 			}
 		}
+		// show next button
+		var next_button = document.getElementById("next-button");
+		next_button.style.display = "block";
+		
 		//Ends Round
 		hasFinished = true;
 	}
@@ -125,7 +141,14 @@ function hitLocalization() {
 //Called by the next button
 //Resets the image for the next round, currently is capable of flipping between 2 configurations
 function nextImage(){
+	// rehide next button
+	var next_button = document.getElementById("next-button");
+	next_button.style.display = "none";
+		
 	imageSelected = false;
+	// change text back
+	document.getElementById("prompt").innerHTML = "Please click on the image you believe contains cancer!";
+	
 	if (leftImageCancerous) //Removes highlighted outline
 	imageDiv = document.getElementById("leftImage");
 	else
