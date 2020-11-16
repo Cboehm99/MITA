@@ -1,6 +1,9 @@
 // include the express module
 var express = require("express");
 
+// keeps track of whether or not a user is logged in
+var loggedIn = false;
+
 // create an express application
 var app = express();
 
@@ -45,7 +48,7 @@ app.get('/train',function(req, res) {
 		res.sendFile(__dirname + '/html/Train.html');
 	}
 	else{
-		res.sendFile(__dirname + '/html/Login.html');
+		res.sendFile(__dirname + '/html/Disclaimer.html');
 	}
 });
 
@@ -92,9 +95,10 @@ app.get('/progress',function(req, res) {
 });
 
 app.get('/logout', function(req, res) {
-  req.session.destroy();
-  res.redirect('/login');
+	req.session.destroy();
+	res.redirect('/login');
 });
+
 
 // Post response for when a user submits the create account form
 app.post('/postLogin', function(req, res) {
@@ -103,3 +107,12 @@ app.post('/postLogin', function(req, res) {
 
 });
 
+// Post agreeing to disclaimer and choosing login
+app.post('/postDisclaimLogin', function(req, res) {
+	res.redirect('/login');
+});
+
+// Post agreeing to disclaimer and choosing to create an account
+app.post('/postDisclaimCreate', function(req, res) {
+	res.redirect('/createAccountPage');
+});
