@@ -21,8 +21,9 @@ p {
 }
 
 .imageContainer{
-	width:50%;
-	margin:0;
+	width:40%;
+	margin-left: 5%;
+	margin-right: 5%;
 	padding:0;
 	float: left;
 	position: relative;
@@ -32,6 +33,10 @@ p {
 	margin-right: 3%;
 	float: right;
 	border: none;
+	border-color: black;
+	border: solid;
+	border-radius: 5px;
+	width: 7%;
 }
 
 .center {
@@ -94,5 +99,10 @@ p {
 
 
 #next-button{
-	display: none;
+	visibility: hidden;
+}
+
+#prompt {
+	margin-left: 6%;
+	width:60%;
 }

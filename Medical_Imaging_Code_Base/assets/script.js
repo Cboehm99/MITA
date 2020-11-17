@@ -51,7 +51,7 @@ function selectImage(){
 		localizationBox.style.height = '9%';
 		localizationBox.style.width= '9%';
 		localizationBox.style.left = '59.12%';
-		localizationBox.style.top = '17%';
+		localizationBox.style.top = '18%';
 		localizationBox.style.border = 'transparent'; //Invisible
 		localizationBox.id = 'localizationBox';
 		localizationBox.onclick = hitLocalization; //User clicked the right spot
@@ -102,7 +102,7 @@ function checkIfCorrectAnswer() {
 		
 		// show next button
 		var next_button = document.getElementById("next-button");
-		next_button.style.display = "block";
+		next_button.style.visibility= "visible";
 		
 		//Ends Round
 		hasFinished = true;
@@ -131,7 +131,7 @@ function hitLocalization() {
 		}
 		// show next button
 		var next_button = document.getElementById("next-button");
-		next_button.style.display = "block";
+		next_button.style.visibility= "visible";
 		
 		//Ends Round
 		hasFinished = true;
@@ -143,11 +143,11 @@ function hitLocalization() {
 function nextImage(){
 	// rehide next button
 	var next_button = document.getElementById("next-button");
-	next_button.style.display = "none";
+	next_button.style.visibility = "hidden";
 		
 	imageSelected = false;
 	// change text back
-	document.getElementById("prompt").innerHTML = "Please click on the image you believe contains cancer!";
+	document.getElementById("prompt").innerHTML = "Please click on the image you believe contains cancer!<br><br>";
 	
 	if (leftImageCancerous) //Removes highlighted outline
 	imageDiv = document.getElementById("leftImage");
