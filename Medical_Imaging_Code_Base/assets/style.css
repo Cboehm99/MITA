@@ -71,15 +71,27 @@ p {
 }
 
 .card {
-	position:fixed;
+	width: 33%;
 	top: 50%;
-	left:50%;
-	transform: translate(-50%, -50%);
+	margin-left:33%;
+	text-align:center !important;
 	background: #ffffff;
 }
 
+.disclaimer-text{
+	width: 100%;
+	margin-left: 0px;
+	
+	
+}
+
+.disclaimer-title {
+	width: 100%;
+	margin-left: 0px;
+	font-size: 36px;
+}
 .card * {
-	text-align:center;
+	
 }
 
 #next-button{
