@@ -35,6 +35,7 @@ p {
 	border-color: black;
 	border: solid;
 	border-radius: 5px;
+	border-width: 1px;
 	width: 7%;
 }
 
@@ -78,7 +79,7 @@ p {
 	width: 33%;
 	top: 50%;
 	margin-left:33%;
-	text-align:center !important;
+
 	background: #ffffff;
 }
 
@@ -115,23 +116,42 @@ p {
 .home-container {
 	width: 100%;
 	display: inline-grid;
-	grid-template-columns: auto auto;
-	grid-column-gap: 20%;
-	grid-row-gap: 5%;
+	grid-template-columns: 40% 40%;
+	grid-column-gap: 10%;
+	grid-row-gap: 20%;
 }
 
 .home-item {
-	width: 75%;
+	width: 100%;
 	
 }
 .home-button {
 	border-color: black;
 	border: solid;
 	border-radius: 5px;
-	width: 75%;
-	margin-left: 12.5%;
-	padding: 10px 0px 10px 0px;
-	float: center;
+	width: 35%;
+	font-size: 20px;
+	margin-left: 8%;
+	padding: 5px 0px 5px 0px;
+	margin-top: 5%;
+	white-space: normal;
+	word-wrap: break-word;
+	border-width: 1px;
+}
+
+.home-content {
+	width: 100%;
+}
+
+.btn-lg {
+	width: 100%;
+}
+
+.login-submit {
+	border-color: black;
+	border: solid;
+	border-radius: 5px;
+	border-width: 1px;
 }
 
 #next-button{
@@ -143,3 +163,9 @@ p {
 	width:60%;
 }
 
+#passwordMatchMessage {
+	color: red;
+	font-size: 12px;
+	margin-bottom: 4px;
+	visibility: hidden;
+}

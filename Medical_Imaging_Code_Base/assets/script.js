@@ -178,5 +178,18 @@ function nextImage(){
 }
 
 function passwordCheck() {
+	var confirm = document.getElementById("confirm").value;
+	var password = document.getElementById("ogpassword").value;
+	var passwordMatch = document.getElementById("passwordMatchMessage");
+	
+	if(confirm === ""){
+	
+	}
+	else if(confirm === password) {
+		passwordMatch.style.visibility = "hidden";
+		
+	} else {
+		passwordMatch.style.visibility = "visible";
+	}
 	
 }

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="script.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-default">
@@ -55,7 +56,7 @@
 				<tr>
                     <td class="col-md-6">New Password
 						<div class="form-group">
-                            <input type="text" class="form-control" name="username" required>
+                            <input id = "ogpassword" onblur="passwordCheck();" type="text" class="form-control" name="username" required>
                         </div>
 					</td>
                                      
@@ -63,14 +64,15 @@
 				<tr>
                     <td class="col-md-6">Confirm New Password
 						<div class="form-group">
-                            <input type="text" class="form-control" name="username" required>
+                            <input id="confirm" type="text" class="form-control" oninput="passwordCheck();" name="username" required>
                         </div>
 					</td>
                                      
                 </tr>
                 <tr>
                     <td class="col-md-6">
-                        <input type="submit" value="Submit">
+						<div id="passwordMatchMessage">The passwords entered do not match</div>
+                        <input class="login-submit" type="submit" id="submitPassword" value="Submit">
                     </td>
                 </tr>
             </tbody>
