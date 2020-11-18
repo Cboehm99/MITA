@@ -51,7 +51,7 @@ function selectImage(){
 		localizationBox.style.height = '9%';
 		localizationBox.style.width= '9%';
 		localizationBox.style.left = '59.12%';
-		localizationBox.style.top = '18%';
+		localizationBox.style.top = '20%';
 		localizationBox.style.border = 'transparent'; //Invisible
 		localizationBox.id = 'localizationBox';
 		localizationBox.onclick = hitLocalization; //User clicked the right spot
@@ -175,4 +175,8 @@ function nextImage(){
 		imageDivII.src = "/normalChest1.jpg";
 		imageSet = 0;
 	}
+}
+
+function passwordCheck() {
+	
 }

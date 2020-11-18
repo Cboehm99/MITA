@@ -18,6 +18,7 @@
 <body>
 <nav class="navbar navbar-default">
     <div class="container-fluid">
+		<div class = "mita-container"><a class = "mita" href="/">MITA</a></div>
         <ul class="nav navbar-nav">
             <li><a href="train"><b>Train</b></a></li>
             <li><a href="information"><b>Information</b></a></li>
@@ -48,7 +49,7 @@
 <div class="card">
     <div class="card-body">
         <p class="disclaimer-title">Disclaimer</p>
-        <p class= "disclaimer-text">This is a student project. The information on this websiteis intended to be educational, not diagnostic.</p>
+        <p class= "disclaimer-text">This is a student project. The information on this website is intended to be educational, not diagnostic.</p>
         <br>
         <p class = "disclaimer-text">It is not a substitute for the expertise of a trained medical professional.</p>
 
@@ -56,13 +57,13 @@
             <input id="isChecked" type="checkbox" class="form-check-input" onclick="toggle();">
             <label for="isChecked" class="form-check-label">I Understand.</label>
         </div>
-
-        <form name="disclaimLogin" method="post" action="/postDisclaimCreate">
+		<br>
+        <form name="disclaimLogin" action="/createAccountPage">
             <button type="submit" class="btn btn-primary btn-lg" id="create" disabled>
                 Create Account</button>
         </form>
 
-        <form name="disclaimCreate" method="post" action="/postDisclaimLogin">
+        <form name="disclaimCreate" action="/login">
             <button type="submit" class="btn btn-primary btn-lg" id="login" disabled>
                 Log In</button>
         </form>

@@ -12,6 +12,7 @@
 <body>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
+			<div class = "mita-container"><a class = "mita" href="/">MITA</a></div>
             <ul class="nav navbar-nav">
                 <li><a href="train"><b>Train</b></a></li>
                 <li><a href="information"><b>Information</b></a></li>
@@ -40,8 +41,23 @@
         </div>
     </nav>
     <br><br>
-    <div class="container">
-        <h1>Click a tab to Start!</h1>
+    <div class="home-container">
+		<div class="home-item">
+			<h1>Train</h1>
+			<form action="/train"><input class= "home-button" type="submit" value="Train Now!"></form>
+		</div>
+		<div class="home-item">
+			<h1>Information</h1>
+			<form action="/information"><input class= "home-button" type= "submit" value="Learn More!" ></form>
+		</div>
+		<div class="home-item">
+			<h1>AboutUs</h1>
+			<form action="/aboutUs"><input class= "home-button" type= "submit" value="Find Out More About Us" ></form>
+		</div>
+		<div class="home-item">
+			<h1>FAQs</h1>
+			<form action="/faqs"><input class= "home-button" type= "submit" value="See more FAQs" ></form>
+		</div>
     </div>
 </body>
 </html>
