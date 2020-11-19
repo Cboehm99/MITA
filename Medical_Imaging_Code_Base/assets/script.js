@@ -120,6 +120,7 @@ function hitLocalization() {
 			}
 			else {
 				document.getElementById("prompt").innerHTML = "<strong>Incorrect.</strong> The cancer is now highlighted on the image. Click 'Next' to move to the next trial.";
+			}
 		}
 		else { //Right image
 			if(!leftImageCancerous) { //correct image
