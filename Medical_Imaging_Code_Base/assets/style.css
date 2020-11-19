@@ -145,8 +145,27 @@ p {
 
 .btn-lg {
 	width: 100%;
+	color: black;
+	border-color: black;
+	border: solid;
+	border-radius: 5px;
+	border-width: 1px;
+	background-color: #EFEFEF;
+}
+.btn-lg:hover {
+	background-color: black;
+	color: white;
 }
 
+.btn-lg:disabled {
+	color: #d9d9d9;
+	background-color: #F5f5f5;
+}
+.btn-lg:disabled:hover {
+	color: #d9d9d9;
+	border-color: #d9d9d9;
+	background-color: #F5f5f5;
+}	
 .login-submit {
 	border-color: black;
 	border: solid;
