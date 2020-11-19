@@ -8,7 +8,6 @@ h3 {
 }
 
 
-
 p {
 	width: 66%;
 	margin-left: 8%;
@@ -27,6 +26,10 @@ p {
 	padding:0;
 	float: left;
 	position: relative;
+}
+
+.current-tab{
+	background: #bbbbbb;
 }
 
 .train-button {
@@ -86,8 +89,8 @@ p {
 .disclaimer-text{
 	width: 100%;
 	margin-left: 0px;
-	
-	
+
+
 }
 
 .disclaimer-title {
@@ -97,8 +100,8 @@ p {
 }
 
 .mita {
-	font-size: 32px; 
-	font-family: serif; 
+	font-size: 32px;
+	font-family: serif;
 	margin-right: 20%;
 	color: black;
 }
@@ -123,7 +126,7 @@ p {
 
 .home-item {
 	width: 100%;
-	
+
 }
 .home-button {
 	border-color: black;

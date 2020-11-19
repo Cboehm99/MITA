@@ -15,8 +15,8 @@
             <div class="container-fluid">
 				<div class = "mita-container"><a class = "mita" href="/">MITA</a></div>
                 <ul class="nav navbar-nav">
-                    <li><a href="train"><b>Train</b></a></li>
-                   <li><a href="information"><b>Information</b></a></li>
+                    <li class="current-tab"><a href="train"><b>Train</b></a></li>
+                    <li><a href="information"><b>Information</b></a></li>
                     <li><a href="aboutUs"><b>About us</b></a></li>
                     <li><a href="faqs"><b>FAQs</b></a></li>
                 </ul>
@@ -41,13 +41,13 @@
             <h3 id="usernameSlot"></h3>
             </div>
         </nav>
-        <h1>Train</h1>
+        <h1 class="phase">Training - Identification Phase</h1>
 		<div>
         <button class="train-button" id="next-button" onclick="nextImage();">Next ></button>
 		<form action="/progress"><input class="train-button" type="submit" value="Quit"></form>
 		</div>
         <div>
-            <h3 id="prompt">Please click on the image you believe contains cancer!<br><br></h3>
+            <h3 id="prompt">Please click on the image you believe contains cancer.<br><br></h3>
         </div>
         <div class="imageContainer" id="leftImageContainer">
             <div class="textFeedback">
