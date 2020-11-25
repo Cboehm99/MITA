@@ -106,13 +106,3 @@ app.post('/postLogin', function(req, res) {
     res.redirect('/train');
 
 });
-
-// Post agreeing to disclaimer and choosing login
-app.post('/postDisclaimLogin', function(req, res) {
-	res.redirect('/login');
-});
-
-// Post agreeing to disclaimer and choosing to create an account
-app.post('/postDisclaimCreate', function(req, res) {
-	res.redirect('/createAccountPage');
-});

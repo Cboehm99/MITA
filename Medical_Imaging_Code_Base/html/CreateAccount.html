@@ -8,10 +8,12 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="script.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
+			<div class = "mita-container"><a class = "mita" href="/">MITA</a></div>
             <ul class="nav navbar-nav">
                 <li><a href="train"><b>Train</b></a></li>
                 <li><a href="information"><b>Information</b></a></li>
@@ -49,7 +51,7 @@
                                   <tr>
                                       <td class="col-md-6">Username
 										  <div class="form-group">
-                                              <input type="text" class="form-control" name="username" required>
+                                              <input type="text" class="form-control" name="username" oninput="" required>
                                           </div>
 									  </td>
                                      
@@ -57,7 +59,7 @@
                                   <tr>
                                       <td class="col-md-6">Password
 										  <div class="form-group">
-                                              <input type="text" class="form-control" name="username" required>
+                                              <input id="ogpassword" type="text" class="form-control" name="username" onblur="passwordCheck();" required>
                                           </div>
 									  </td>
                                      
@@ -65,14 +67,15 @@
 								  <tr>
                                       <td class="col-md-6">Confirm Password
 										  <div class="form-group">
-                                              <input type="text" class="form-control" name="username" required>
+                                              <input id= "confirm" type="text" class="form-control" name="username" oninput="passwordCheck();" required>
                                           </div>
 									  </td>
                                      
                                   </tr>
                                   <tr>
                                       <td class="col-md-6">
-                                          <input type="submit" value="Submit">
+										  <div id="passwordMatchMessage">The passwords entered do not match</div>
+                                          <input class="login-submit" id="submitPassword"  type="submit" value="Submit">
                                       </td>
                                   </tr>
                               </tbody>

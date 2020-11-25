@@ -1,16 +1,3 @@
-
-.xray {
-	width: 100%;
-	height: auto;
-}
-.imageContainer{
-	width:50%;
-	margin:0;
-	padding:0;
-	float: left;
-	position: relative;
-}
-
 h1 {
 	margin-left: 6%;
 
@@ -21,17 +8,38 @@ h3 {
 }
 
 
-
 p {
 	width: 66%;
 	margin-left: 8%;
 	font-size: 18px;
 }
 
+.xray {
+	width: 100%;
+	height: auto;
+}
+
+.imageContainer{
+	width:40%;
+	margin-left: 5%;
+	margin-right: 5%;
+	padding:0;
+	float: left;
+	position: relative;
+}
+
+.current-tab{
+	background: #bbbbbb;
+}
+
 .train-button {
 	margin-right: 3%;
 	float: right;
-	border: none;
+	border-color: black;
+	border: solid;
+	border-radius: 5px;
+	border-width: 1px;
+	width: 7%;
 }
 
 .center {
@@ -71,17 +79,115 @@ p {
 }
 
 .card {
-	position:fixed;
+	width: 33%;
 	top: 50%;
-	left:50%;
-	transform: translate(-50%, -50%);
+	margin-left:33%;
+
 	background: #ffffff;
 }
 
-.card * {
-	text-align:center;
+.disclaimer-text{
+	width: 100%;
+	margin-left: 0px;
+
+
+}
+
+.disclaimer-title {
+	width: 100%;
+	margin-left: 0px;
+	font-size: 36px;
+}
+
+.mita {
+	font-size: 32px;
+	font-family: serif;
+	margin-right: 20%;
+	color: black;
+}
+
+.mita:hover {
+	color: black;
+	text-decoration: none;
+}
+
+.mita-container {
+	float: left;
+	margin-right: 2%;
+}
+
+.home-container {
+	width: 100%;
+	display: inline-grid;
+	grid-template-columns: 40% 40%;
+	grid-column-gap: 10%;
+	grid-row-gap: 20%;
+}
+
+.home-item {
+	width: 100%;
+
+}
+.home-button {
+	border-color: black;
+	border: solid;
+	border-radius: 5px;
+	width: 35%;
+	font-size: 20px;
+	margin-left: 8%;
+	padding: 5px 0px 5px 0px;
+	margin-top: 5%;
+	white-space: normal;
+	word-wrap: break-word;
+	border-width: 1px;
+}
+
+.home-content {
+	width: 100%;
+}
+
+.btn-lg {
+	width: 100%;
+	color: black;
+	border-color: black;
+	border: solid;
+	border-radius: 5px;
+	border-width: 1px;
+	background-color: #EFEFEF;
+}
+.btn-lg:hover {
+	background-color: black;
+	color: white;
+}
+
+.btn-lg:disabled {
+	color: #d9d9d9;
+	background-color: #F5f5f5;
+}
+.btn-lg:disabled:hover {
+	color: #d9d9d9;
+	border-color: #d9d9d9;
+	background-color: #F5f5f5;
+}	
+.login-submit {
+	border-color: black;
+	border: solid;
+	border-radius: 5px;
+	border-width: 1px;
 }
 
 #next-button{
-	display: none;
+	visibility: hidden;
+}
+
+#prompt {
+	margin-left: 6%;
+	width:60%;
+}
+
+#passwordMatchMessage {
+	color: red;
+	font-size: 12px;
+	margin-bottom: 4px;
+	visibility: hidden;
 }
