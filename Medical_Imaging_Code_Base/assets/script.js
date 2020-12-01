@@ -189,9 +189,11 @@ function passwordCheck() {
 	}
 	else if(confirm === password) {
 		passwordMatch.style.visibility = "hidden";
+		document.getElementById('submitPassword').disabled = false;
 
 	} else {
 		passwordMatch.style.visibility = "visible";
+		document.getElementById('submitPassword').disabled = true;
 	}
 
 }
