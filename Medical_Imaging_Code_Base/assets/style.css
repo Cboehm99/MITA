@@ -42,6 +42,11 @@ p {
 	width: 7%;
 }
 
+.train-button:hover {
+	background-color: #333333;
+	color: white;
+}
+
 .center {
 	margin-left: auto;
 	margin-right: auto;
@@ -71,6 +76,12 @@ p {
 
 .info-link{
 	margin-left: 8%;
+	color: inherit;
+}
+
+.info-link:hover {
+	color: inherit;
+	text-decoration: none;
 }
 
 .info-list {
@@ -129,7 +140,7 @@ p {
 
 }
 .home-button {
-	border-color: black;
+	border-color: #333333;
 	border: solid;
 	border-radius: 5px;
 	width: 35%;
@@ -142,21 +153,26 @@ p {
 	border-width: 1px;
 }
 
+.home-button:hover {
+	background-color: #333333;
+	color: white;
+}
+
 .home-content {
 	width: 100%;
 }
 
 .btn-lg {
 	width: 100%;
-	color: black;
-	border-color: black;
+	color: #333333;
+	border-color: #333333;
 	border: solid;
 	border-radius: 5px;
 	border-width: 1px;
 	background-color: #EFEFEF;
 }
 .btn-lg:hover {
-	background-color: black;
+	background-color: #333333;
 	color: white;
 }
 
@@ -170,12 +186,16 @@ p {
 	background-color: #F5f5f5;
 }	
 .login-submit {
-	border-color: black;
+	border-color: #333333;
 	border: solid;
 	border-radius: 5px;
 	border-width: 1px;
 }
 
+.login-submit:hover {
+	background-color: #333333;
+	color: white;
+}
 #next-button{
 	visibility: hidden;
 }

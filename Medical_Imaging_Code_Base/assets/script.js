@@ -86,7 +86,7 @@ function checkIfCorrectAnswer() {
 		localBox.style.border = 'thick solid #CFFF04';
 		if (leftImage) {
 			if(leftImageCancerous){
-				document.getElementById("prompt").innerHTML = "<strong>Correct.</strong> The cancer is now highlighted on the image. Click 'Next' to move to the next trial.";
+				document.getElementById("prompt").innerHTML = "<strong>Incorrect.</strong> The cancer is now highlighted on the image. Click 'Next' to move to the next trial.";
 			}
 			else {
 				document.getElementById("prompt").innerHTML = "<strong>Incorrect.</strong> The cancer is now highlighted on the image. Click 'Next' to move to the next trial.";
@@ -95,7 +95,7 @@ function checkIfCorrectAnswer() {
 		}
 		else { //Right image
 			if(!leftImageCancerous) //right image is cancerous
-				document.getElementById("prompt").innerHTML = "<strong>Correct.</strong> The cancer is now highlighted on the image. Click 'Next' to move to the next trial.";
+				document.getElementById("prompt").innerHTML = "<strong>Incorrect.</strong> The cancer is now highlighted on the image. Click 'Next' to move to the next trial.";
 			else {
 				document.getElementById("prompt").innerHTML = "<strong>Incorrect.</strong> The cancer is now highlighted on the image. Click 'Next' to move to the next trial.";
 			}
