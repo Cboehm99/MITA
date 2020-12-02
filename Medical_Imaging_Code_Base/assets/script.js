@@ -69,15 +69,15 @@ function checkIfCorrectAnswer() {
 		//Checks what image was clicked, then if it was the cancerous image, then sets the appropriate feedback
 		if (leftImage) {
 			if(leftImageCancerous)
-				document.getElementById("prompt").innerHTML = "<strong>Correct.</strong> The image containing the cancer is highlighted yellow. Please look for and click on the cancerous spot.";
+				document.getElementById("prompt").innerHTML = "<strong>Correct.</strong> Now select the cancerous spot from within the highlighted image.";
 			else
-				document.getElementById("prompt").innerHTML = "<strong>Incorrect.</strong> The image containing the cancer is highlighted yellow. Please look for and click on the cancerous spot.";
+				document.getElementById("prompt").innerHTML = "<strong>Incorrect.</strong> Now select the cancerous spot from within the highlighted image.";
 		}
 		else { //Right image
 			if(!leftImageCancerous)
-				document.getElementById("prompt").innerHTML = "<strong>Correct.</strong> The image containing the cancer is highlighted yellow. Please look for and click on the cancerous spot.";
+				document.getElementById("prompt").innerHTML = "<strong>Correct.</strong> Now select the cancerous spot from within the highlighted image.";
 			else
-				document.getElementById("prompt").innerHTML = "<strong>Incorrect.</strong> The image containing the cancer is highlighted yellow. Please look for andclick on the cancerous spot.";
+				document.getElementById("prompt").innerHTML = "<strong>Incorrect.</strong> Now select the cancerous spot from within the highlighted image.";
 		}
 		selectImage(); //Creates localizationBox
 	}
@@ -86,18 +86,18 @@ function checkIfCorrectAnswer() {
 		localBox.style.border = 'thick solid #f5d633';
 		if (leftImage) {
 			if(leftImageCancerous){
-				document.getElementById("prompt").innerHTML = "<strong>Incorrect.</strong> The cancer is now highlighted on the image. Click 'Next' to move to the next trial.";
+				document.getElementById("prompt").innerHTML = "<strong>Incorrect.</strong> The cancer is now highlighted on the image. Click 'Next' to move on!";
 			}
 			else {
-				document.getElementById("prompt").innerHTML = "<strong>Incorrect.</strong> The cancer is now highlighted on the image. Click 'Next' to move to the next trial.";
+				document.getElementById("prompt").innerHTML = "<strong>Incorrect.</strong> The cancer is now highlighted on the image. Click 'Next' to move on!";
 
 			}
 		}
 		else { //Right image
 			if(!leftImageCancerous) //right image is cancerous
-				document.getElementById("prompt").innerHTML = "<strong>Incorrect.</strong> The cancer is now highlighted on the image. Click 'Next' to move to the next trial.";
+				document.getElementById("prompt").innerHTML = "<strong>Incorrect.</strong> The cancer is now highlighted on the image. Click 'Next' to move on!";
 			else {
-				document.getElementById("prompt").innerHTML = "<strong>Incorrect.</strong> The cancer is now highlighted on the image. Click 'Next' to move to the next trial.";
+				document.getElementById("prompt").innerHTML = "<strong>Incorrect.</strong> The cancer is now highlighted on the image. Click 'Next' to move on!";
 			}
 		}
 
@@ -116,18 +116,18 @@ function hitLocalization() {
 		localizationBox.style.border = 'thick solid #f5d633';
 		if (leftImage) {
 			if(leftImageCancerous){
-				document.getElementById("prompt").innerHTML =  "<strong>Correct.</strong> The cancer is now highlighted on the image. Click 'Next' to move to the next trial.";
+				document.getElementById("prompt").innerHTML =  "<strong>Correct.</strong> The cancer is now highlighted on the image. Click 'Next' to move on!";
 			}
 			else {
-				document.getElementById("prompt").innerHTML = "<strong>Incorrect.</strong> The cancer is now highlighted on the image. Click 'Next' to move to the next trial.";
+				document.getElementById("prompt").innerHTML = "<strong>Incorrect.</strong> The cancer is now highlighted on the image. Click 'Next' to move on!";
 			}
 		}
 		else { //Right image
 			if(!leftImageCancerous) { //correct image
-				document.getElementById("prompt").innerHTML =  "<strong>Correct.</strong> The cancer is now highlighted on the image. Click 'Next' to move to the next trial.";
+				document.getElementById("prompt").innerHTML =  "<strong>Correct.</strong> The cancer is now highlighted on the image. Click 'Next' to move on!";
 			}
 			else {
-				document.getElementById("prompt").innerHTML = "<strong>Incorrect.</strong> The cancer is now highlighted on the image. Click 'Next' to move to the next trial.";
+				document.getElementById("prompt").innerHTML = "<strong>Incorrect.</strong> The cancer is now highlighted on the image. Click 'Next' to move on!";
 			}
 		}
 		// show next button
@@ -149,7 +149,7 @@ function nextImage(){
 	imageSelected = false;
 	// change text back
 	document.getElementById("phase").innerHTML = "Training - Identification Phase";
-	document.getElementById("prompt").innerHTML = "Please click on the image you believe contains cancer.<br><br>";
+	document.getElementById("prompt").innerHTML = "Please click on the image you believe contains cancer.<br>";
 
 	if (leftImageCancerous) //Removes highlighted outline
 	imageDiv = document.getElementById("leftImage");
