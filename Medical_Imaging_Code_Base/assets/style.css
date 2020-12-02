@@ -14,6 +14,9 @@ p {
 	font-size: 18px;
 }
 
+body{
+	background-color: #e7e7de !important;
+}
 .xray {
 	width: 100%;
 	height: auto;
@@ -31,15 +34,26 @@ p {
 .current-tab{
 	background: #bbbbbb;
 }
-
+.navbar {
+	background-color: #0f3057;
+}
+.navbar-default .navbar-nav>li>a{
+	color: white;
+	font-size: 15px;
+	font-weight: bold;
+}
 .train-button {
 	margin-right: 3%;
 	float: right;
-	border-color: black;
-	border: solid;
+	border: none;
 	border-radius: 5px;
 	border-width: 1px;
 	width: 7%;
+	background-color: #f5d633;
+	color: white;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 20px;
 }
 
 .train-button:hover {
@@ -96,7 +110,9 @@ p {
 
 	background: #ffffff;
 }
-
+.card-body {
+	background-color: #e7e7de !important;
+}
 .disclaimer-text{
 	width: 100%;
 	margin-left: 0px;
@@ -108,17 +124,18 @@ p {
 	width: 100%;
 	margin-left: 0px;
 	font-size: 36px;
+	color: red;
 }
 
 .mita {
 	font-size: 32px;
 	font-family: serif;
 	margin-right: 20%;
-	color: black;
+	color: white;
 }
 
 .mita:hover {
-	color: black;
+	color: white;
 	text-decoration: none;
 }
 
@@ -140,8 +157,8 @@ p {
 
 }
 .home-button {
-	border-color: #333333;
-	border: solid;
+	background-color: #f5d633;
+	border: none;
 	border-radius: 5px;
 	width: 35%;
 	font-size: 20px;
@@ -151,6 +168,7 @@ p {
 	white-space: normal;
 	word-wrap: break-word;
 	border-width: 1px;
+	color: white;
 }
 
 .home-button:hover {
@@ -164,12 +182,10 @@ p {
 
 .btn-lg {
 	width: 100%;
-	color: #333333;
-	border-color: #333333;
-	border: solid;
+	color: white;
+	border: none;
 	border-radius: 5px;
-	border-width: 1px;
-	background-color: #EFEFEF;
+	background-color: #f5d633;
 }
 .btn-lg:hover {
 	background-color: #333333;
@@ -187,9 +203,12 @@ p {
 }	
 .login-submit {
 	border-color: #333333;
-	border: solid;
+	border: none;
 	border-radius: 5px;
 	border-width: 1px;
+	background-color: #f5d633;
+	color: white;
+	font-size: 18px;
 }
 
 .login-submit:hover {

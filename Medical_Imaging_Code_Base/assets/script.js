@@ -27,7 +27,7 @@ function selectImage(){
 		imageDiv = document.getElementById("leftImage");
 	else
 		imageDiv = document.getElementById("rightImage");
-	imageDiv.style.border = 'thick solid #CFFF04';
+	imageDiv.style.border = 'thick solid #f5d633';
 	imageSelected = true;
 	var localizationBox = document.createElement('div');
 	if(leftImageCancerous){
@@ -83,7 +83,7 @@ function checkIfCorrectAnswer() {
 	}
 	else { //They clicked the picture instead of the localization box
 		localBox = document.getElementById('localizationBox');
-		localBox.style.border = 'thick solid #CFFF04';
+		localBox.style.border = 'thick solid #f5d633';
 		if (leftImage) {
 			if(leftImageCancerous){
 				document.getElementById("prompt").innerHTML = "<strong>Incorrect.</strong> The cancer is now highlighted on the image. Click 'Next' to move to the next trial.";
@@ -113,7 +113,7 @@ function checkIfCorrectAnswer() {
 //Function that is called when the localizationBox is clicked, so the user clicked correctly
 function hitLocalization() {
 	if(!hasFinished) {//Doesn't allow the user to change their answer by skipping rest of function
-		localizationBox.style.border = 'thick solid #CFFF04';
+		localizationBox.style.border = 'thick solid #f5d633';
 		if (leftImage) {
 			if(leftImageCancerous){
 				document.getElementById("prompt").innerHTML =  "<strong>Correct.</strong> The cancer is now highlighted on the image. Click 'Next' to move to the next trial.";
