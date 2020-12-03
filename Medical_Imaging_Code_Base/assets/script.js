@@ -3,6 +3,7 @@ var imageSelected = false;
 var leftImageCancerous = true;
 var clickedLeftImage = false;
 var hasFinished = false; //Avoid cheating
+var clickedLocalizationBox = false;
 
 // Function called by left image to allow other functions to know what image is being used
 function isLeftImage() {
@@ -20,36 +21,78 @@ function isRightImage() {
 	}
 }
 
-function selectImage() {
-	imageDiv = document.getElementById("leftImage");
-	imageDiv.style.border = 'none';
-	imageDiv = document.getElementById("rightImage");
-	imageDiv.style.border = 'none';
-
-	//Puts the border on the right image
-	if (clickedLeftImage)
-		imageDiv = document.getElementById("leftImage");
-	else
-		imageDiv = document.getElementById("rightImage");
-	imageDiv.style.border = 'thick solid #f5d633';
-
-	//Makes the check answer button visible
+//Makes the check answer button visible
+function showCheckAnswerBox() {
 	var button = document.getElementById("check-answer-button");
 	button.style.visibility = "visible";
+	document.getElementById("prompt").innerHTML = "Click the 'Check Answer' button to see if you are correct!";
 }
 
+function selectImage() {
+	if (!imageSelected) { //Image selection
+		imageDiv = document.getElementById("leftImage");
+		imageDiv.style.border = 'none';
+		imageDiv = document.getElementById("rightImage");
+		imageDiv.style.border = 'none';
 
-function SelectLoc() {
+		//Puts the border on the right image
+		if (clickedLeftImage)
+			imageDiv = document.getElementById("leftImage");
+		else
+			imageDiv = document.getElementById("rightImage");
+		imageDiv.style.border = 'thick solid #f5d633';
+		showCheckAnswerBox();
+	}
+	else { //Localization selection
+		showCheckAnswerBox();
+		clickedLocalizationBox = false; //missed the box
+	}
+}
 
+//Used to indicate whether a user clicked the localization box
+function clickLocBox() {
+	clickedLocalizationBox = true;
+	showCheckAnswerBox();
 }
 
 function hitCheckAnswer() {
-	if (!imageSelected) {
+	if (!imageSelected){
 		checkLoc(); //Adds the dialogue to the prompt
 		checkSelectImage();
+		var localizationBox = document.createElement('div');
+		if(leftImageCancerous){
+			// hard coded styling will need to be changed if we want to pull from db
+			document.getElementById("leftImageContainer").appendChild(localizationBox);
+			localizationBox.style.display = 'block';
+			localizationBox.style.position = 'absolute';
+			localizationBox.style.height = '9%';
+			localizationBox.style.width= '9%';
+			localizationBox.style.left = '74.79%';
+			localizationBox.style.top = '29.79%';
+			localizationBox.style.border = 'transparent'; //Invisible
+			localizationBox.id = 'localizationBox';
+			localizationBox.onclick = clickLocBox; //User clicked the right spot
+		}
+		else { //Right Image is cancerous
+			// hard coded styling will need to be changed if we want to pull from db
+			document.getElementById("rightImageContainer").appendChild(localizationBox);
+			localizationBox.style.display = 'block';
+			localizationBox.style.position = 'absolute';
+			localizationBox.style.height = '9%';
+			localizationBox.style.width= '9%';
+			localizationBox.style.left = '59.12%';
+			localizationBox.style.top = '20%';
+			localizationBox.style.border = 'transparent'; //Invisible
+			localizationBox.id = 'localizationBox';
+			localizationBox.onclick = clickLocBox; //User clicked the right spot
+		}
 	}
-	else
-		checkLoc();
+	else { //localization box things
+		if (clickedLocalizationBox)
+			hitLocalization();
+		else
+			checkLoc();
+	}
 	button = document.getElementById("check-answer-button");
 	button.style.visibility = "hidden";
 }
@@ -69,35 +112,6 @@ function checkSelectImage(){
 	else
 		imageDiv = document.getElementById("rightImage");
 	imageDiv.style.border = 'thick solid #f5d633';
-
-	imageSelected = true;
-	var localizationBox = document.createElement('div');
-	if(leftImageCancerous){
-		// hard coded styling will need to be changed if we want to pull from db
-		document.getElementById("leftImageContainer").appendChild(localizationBox);
-		localizationBox.style.display = 'block';
-		localizationBox.style.position = 'absolute';
-		localizationBox.style.height = '9%';
-		localizationBox.style.width= '9%';
-		localizationBox.style.left = '74.79%';
-		localizationBox.style.top = '29.79%';
-		localizationBox.style.border = 'transparent'; //Invisible
-		localizationBox.id = 'localizationBox';
-		localizationBox.onclick = hitLocalization; //User clicked the right spot
-	}
-	else {
-		// hard coded styling will need to be changed if we want to pull from db
-		document.getElementById("rightImageContainer").appendChild(localizationBox);
-		localizationBox.style.display = 'block';
-		localizationBox.style.position = 'absolute';
-		localizationBox.style.height = '9%';
-		localizationBox.style.width= '9%';
-		localizationBox.style.left = '59.12%';
-		localizationBox.style.top = '20%';
-		localizationBox.style.border = 'transparent'; //Invisible
-		localizationBox.id = 'localizationBox';
-		localizationBox.onclick = hitLocalization; //User clicked the right spot
-	}
 
 	imageSelected = true;
 }
@@ -126,22 +140,7 @@ function checkLoc() {
 	else { //They clicked the picture instead of the localization box
 		localBox = document.getElementById('localizationBox');
 		localBox.style.border = 'thick solid #f5d633';
-		if (leftImage) {
-			if(leftImageCancerous){
-				document.getElementById("prompt").innerHTML = "<strong>Incorrect.</strong> The cancer is now highlighted on the image. Click 'Next' to move on!";
-			}
-			else {
-				document.getElementById("prompt").innerHTML = "<strong>Incorrect.</strong> The cancer is now highlighted on the image. Click 'Next' to move on!";
-
-			}
-		}
-		else { //Right image
-			if(!leftImageCancerous) //right image is cancerous
-				document.getElementById("prompt").innerHTML = "<strong>Incorrect.</strong> The cancer is now highlighted on the image. Click 'Next' to move on!";
-			else {
-				document.getElementById("prompt").innerHTML = "<strong>Incorrect.</strong> The cancer is now highlighted on the image. Click 'Next' to move on!";
-			}
-		}
+		document.getElementById("prompt").innerHTML = "<strong>Incorrect.</strong> The cancer is now highlighted on the image. Click 'Next' to move on!";
 
 		// show next button
 		var next_button = document.getElementById("next-button");
@@ -155,23 +154,8 @@ function checkLoc() {
 //Function that is called when the localizationBox is clicked, so the user clicked correctly
 function hitLocalization() {
 	if(!hasFinished) {//Doesn't allow the user to change their answer by skipping rest of function
-		localizationBox.style.border = 'thick solid #f5d633';
-		if (leftImage) {
-			if(leftImageCancerous){
-				document.getElementById("prompt").innerHTML =  "<strong>Correct.</strong> The cancer is now highlighted on the image. Click 'Next' to move on!";
-			}
-			else {
-				document.getElementById("prompt").innerHTML = "<strong>Incorrect.</strong> The cancer is now highlighted on the image. Click 'Next' to move on!";
-			}
-		}
-		else { //Right image
-			if(!leftImageCancerous) { //correct image
-				document.getElementById("prompt").innerHTML =  "<strong>Correct.</strong> The cancer is now highlighted on the image. Click 'Next' to move on!";
-			}
-			else {
-				document.getElementById("prompt").innerHTML = "<strong>Incorrect.</strong> The cancer is now highlighted on the image. Click 'Next' to move on!";
-			}
-		}
+		document.getElementById("localizationBox").style.border = 'thick solid #f5d633';
+		document.getElementById("prompt").innerHTML =  "<strong>Correct.</strong> The cancer is now highlighted on the image. Click 'Next' to move on!";
 		// show next button
 		var next_button = document.getElementById("next-button");
 		next_button.style.visibility= "visible";
@@ -189,6 +173,9 @@ function nextImage(){
 	next_button.style.visibility = "hidden";
 
 	imageSelected = false;
+	clickedLeftImage = false;
+	hasFinished = false;
+	clickedLocalizationBox = false
 	// change text back
 	document.getElementById("phase").innerHTML = "Training - Identification Phase";
 	document.getElementById("prompt").innerHTML = "Please click on the image you believe contains cancer.<br>";
@@ -200,8 +187,7 @@ function nextImage(){
 	imageDiv.style.border = 'none';
 	localBox = document.getElementById('localizationBox');
 	localBox.remove();
-	clickedLeftImage = false;
-	hasFinished = false;
+
 	leftImageCancerous = !leftImageCancerous; //flips what image is cancerous due to hardcoding setup
 	document.getElementById("textFeedbackL").innerHTML = "";
 	document.getElementById("textFeedbackR").innerHTML = "";
