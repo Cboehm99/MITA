@@ -56,6 +56,20 @@ body{
 	font-size: 20px;
 }
 
+.check-answer-button {
+	margin-right: 3%;
+	float: right;
+	border: none;
+	border-radius: 5px;
+	border-width: 1px;
+	width: 10%;
+	background-color: #e6c200;
+	color: white;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 20px;
+}
+
 .train-button:hover {
 	background-color: #333333;
 	color: white;
@@ -201,7 +215,7 @@ body{
 	color: #d9d9d9;
 	border-color: #d9d9d9;
 	background-color: #F5f5f5;
-}	
+}
 .login-submit {
 	border-color: #333333;
 	border: none;
@@ -216,7 +230,12 @@ body{
 	background-color: #333333;
 	color: white;
 }
+
 #next-button{
+	visibility: hidden;
+}
+
+#check-answer-button{
 	visibility: hidden;
 }
 

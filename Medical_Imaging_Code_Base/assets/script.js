@@ -1,33 +1,75 @@
 var imageSet = 0;
 var imageSelected = false;
 var leftImageCancerous = true;
-var leftImage = false; //true if left image is clicked
+var clickedLeftImage = false;
 var hasFinished = false; //Avoid cheating
 
 // Function called by left image to allow other functions to know what image is being used
 function isLeftImage() {
 	if (!hasFinished) {
-		leftImage = true;
-		checkIfCorrectAnswer();
+		clickedLeftImage = true;
+		selectImage();
 	}
 }
 
 // Function called by right image to allow other functions to know what image is being used
 function isRightImage() {
 	if (!hasFinished) {
-		leftImage = false;
-		checkIfCorrectAnswer();
+		clickedLeftImage = false;
+		selectImage();
 	}
+}
+
+function selectImage() {
+	imageDiv = document.getElementById("leftImage");
+	imageDiv.style.border = 'none';
+	imageDiv = document.getElementById("rightImage");
+	imageDiv.style.border = 'none';
+
+	//Puts the border on the right image
+	if (clickedLeftImage)
+		imageDiv = document.getElementById("leftImage");
+	else
+		imageDiv = document.getElementById("rightImage");
+	imageDiv.style.border = 'thick solid #f5d633';
+
+	//Makes the check answer button visible
+	var button = document.getElementById("check-answer-button");
+	button.style.visibility = "visible";
+}
+
+
+function SelectLoc() {
+
+}
+
+function hitCheckAnswer() {
+	if (!imageSelected) {
+		checkLoc(); //Adds the dialogue to the prompt
+		checkSelectImage();
+	}
+	else
+		checkLoc();
+	button = document.getElementById("check-answer-button");
+	button.style.visibility = "hidden";
 }
 
 // function to highlight image with lung cancer
 //Creates localizationBox as an effective transparent button
-function selectImage(){
+function checkSelectImage(){
+	//Gets rid of all image borders
+	imageDiv = document.getElementById("leftImage");
+	imageDiv.style.border = 'none';
+	imageDiv = document.getElementById("rightImage");
+	imageDiv.style.border = 'none';
+
+	//Puts the border on the right image
 	if (leftImageCancerous)
 		imageDiv = document.getElementById("leftImage");
 	else
 		imageDiv = document.getElementById("rightImage");
 	imageDiv.style.border = 'thick solid #f5d633';
+
 	imageSelected = true;
 	var localizationBox = document.createElement('div');
 	if(leftImageCancerous){
@@ -63,7 +105,7 @@ function selectImage(){
 //1st step: Checks if the user clicked the right image
 //2nd step: If the user already clicked an image, and then clicks the image again, it must mean that
 //	the user did NOT click the localizationBox -- so they did not click the right spot
-function checkIfCorrectAnswer() {
+function checkLoc() {
 	if(!imageSelected) {
 		document.getElementById("phase").innerHTML = "Training - Localization Phase";
 		//Checks what image was clicked, then if it was the cancerous image, then sets the appropriate feedback
@@ -79,7 +121,7 @@ function checkIfCorrectAnswer() {
 			else
 				document.getElementById("prompt").innerHTML = "<strong>Incorrect.</strong> Now select the cancerous spot from within the highlighted image.";
 		}
-		selectImage(); //Creates localizationBox
+		checkSelectImage(); //Creates localizationBox
 	}
 	else { //They clicked the picture instead of the localization box
 		localBox = document.getElementById('localizationBox');
@@ -158,7 +200,7 @@ function nextImage(){
 	imageDiv.style.border = 'none';
 	localBox = document.getElementById('localizationBox');
 	localBox.remove();
-	leftImage = false;
+	clickedLeftImage = false;
 	hasFinished = false;
 	leftImageCancerous = !leftImageCancerous; //flips what image is cancerous due to hardcoding setup
 	document.getElementById("textFeedbackL").innerHTML = "";
