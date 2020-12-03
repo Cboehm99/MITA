@@ -9,7 +9,7 @@ var clickedLocalizationBox = false;
 function isLeftImage() {
 	if (!hasFinished) {
 		clickedLeftImage = true;
-		selectImage();
+		selectImage(); //Calls to highlight the image selected
 	}
 }
 
@@ -17,7 +17,7 @@ function isLeftImage() {
 function isRightImage() {
 	if (!hasFinished) {
 		clickedLeftImage = false;
-		selectImage();
+		selectImage(); //Calls to highlight the image selected
 	}
 }
 
