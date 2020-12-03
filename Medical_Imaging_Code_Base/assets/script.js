@@ -28,6 +28,7 @@ function showCheckAnswerBox() {
 	document.getElementById("prompt").innerHTML = "Click the 'Check Answer' button to see if you are correct!";
 }
 
+//Highlights an image when the user clicks on it in the image selection phase
 function selectImage() {
 	if (!imageSelected) { //Image selection
 		imageDiv = document.getElementById("leftImage");
@@ -55,10 +56,14 @@ function clickLocBox() {
 	showCheckAnswerBox();
 }
 
+//Checks the answer of image and localization selection
+//Used by the check answer button
 function hitCheckAnswer() {
+	//image selection phase
 	if (!imageSelected){
 		checkLoc(); //Adds the dialogue to the prompt
 		checkSelectImage();
+		//Creates the localization box
 		var localizationBox = document.createElement('div');
 		if(leftImageCancerous){
 			// hard coded styling will need to be changed if we want to pull from db
@@ -87,12 +92,13 @@ function hitCheckAnswer() {
 			localizationBox.onclick = clickLocBox; //User clicked the right spot
 		}
 	}
-	else { //localization box things
+	else { //localization box phase
 		if (clickedLocalizationBox)
-			hitLocalization();
+			hitLocalization(); //Correct
 		else
-			checkLoc();
+			checkLoc(); //Incorrect
 	}
+	//hides the check answer box again
 	button = document.getElementById("check-answer-button");
 	button.style.visibility = "hidden";
 }
@@ -116,8 +122,8 @@ function checkSelectImage(){
 	imageSelected = true;
 }
 
-//1st step: Checks if the user clicked the right image
-//2nd step: If the user already clicked an image, and then clicks the image again, it must mean that
+//1st phase: Checks if the user clicked the right image
+//2nd phase: If the user already clicked an image, and then clicks the image again, it must mean that
 //	the user did NOT click the localizationBox -- so they did not click the right spot
 function checkLoc() {
 	if(!imageSelected) {
