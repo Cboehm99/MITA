@@ -129,7 +129,7 @@ function checkLoc() {
 	if(!imageSelected) {
 		document.getElementById("phase").innerHTML = "Training - Localization Phase";
 		//Checks what image was clicked, then if it was the cancerous image, then sets the appropriate feedback
-		if (leftImage) {
+		if (clickedLeftImage) {
 			if(leftImageCancerous)
 				document.getElementById("prompt").innerHTML = "<strong>Correct.</strong> Now select the cancerous spot from within the highlighted image.";
 			else
