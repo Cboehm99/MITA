@@ -45,15 +45,16 @@ function selectImage() {
 		showCheckAnswerBox();
 	}
 	else { //Localization selection
-		showCheckAnswerBox();
+		
 		clickedLocalizationBox = false; //missed the box
+		hitCheckAnswer();
 	}
 }
 
 //Used to indicate whether a user clicked the localization box
 function clickLocBox() {
 	clickedLocalizationBox = true;
-	showCheckAnswerBox();
+	hitCheckAnswer();
 }
 
 //Checks the answer of image and localization selection

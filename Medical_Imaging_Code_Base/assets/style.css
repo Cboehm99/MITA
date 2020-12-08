@@ -42,6 +42,11 @@ body{
 	font-size: 15px;
 	font-weight: bold;
 }
+.navbar-default .navbar-nav>li>a:hover{
+	color: #adadad;
+	font-size: 15px;
+	font-weight: bold;
+}
 .train-button {
 	margin-right: 3%;
 	float: right;
@@ -71,7 +76,7 @@ body{
 }
 
 .train-button:hover {
-	background-color: #333333;
+	background-color: #c4a600;
 	color: white;
 }
 
@@ -186,7 +191,7 @@ body{
 }
 
 .home-button:hover {
-	background-color: #333333;
+	background-color: #c4a600;
 	color: white;
 }
 
@@ -203,7 +208,7 @@ body{
 	font-size: 20px;
 }
 .btn-lg:hover {
-	background-color: #333333;
+	background-color: #c4a600;
 	color: white;
 }
 
@@ -217,17 +222,20 @@ body{
 	background-color: #F5f5f5;
 }
 .login-submit {
-	border-color: #333333;
 	border: none;
 	border-radius: 5px;
 	border-width: 1px;
 	background-color: #e6c200;
 	color: white;
 	font-size: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
 
 .login-submit:hover {
-	background-color: #333333;
+	background-color: #c4a600;
 	color: white;
 }
 
