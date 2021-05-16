@@ -24,22 +24,26 @@ app.use(session({
 
 app.use(express.static(__dirname + '/assets'));
 
-// server listens on port 9999 for incoming connections
-app.listen(process.env.PORT || 9999, () => console.log('Listening on port 9999'));
+// server listens on heroku port or port 9999 for incoming connections
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 9999;
+}
+app.listen(port);
 
 
 // Default page for app is home page
 app.get('/',function(req, res) {
-	
+
 	res.sendFile(__dirname + '/html/home.html');
-	
+
 });
 
 //routes user to Login page on clicking train
 app.get('/login',function(req, res) {
-	
+
 	res.sendFile(__dirname + '/html/Login.html');
-	
+
 });
 
 // work around for current lack of a true login session thing
@@ -56,28 +60,28 @@ app.get('/train',function(req, res) {
 app.get('/aboutUs',function(req, res) {
 
 	res.sendFile(__dirname + '/html/AboutUs.html');
-	
+
 });
 
-// FAQ page 
+// FAQ page
 app.get('/faqs',function(req, res) {
 
 	res.sendFile(__dirname + '/html/FAQs.html');
-	
+
 });
 
 // Create Account Page
 app.get('/createAccountPage',function(req, res) {
 
 	res.sendFile(__dirname + '/html/CreateAccount.html');
-	
+
 });
 
 // Information Page
 app.get('/information',function(req, res) {
 
 	res.sendFile(__dirname + '/html/Information.html');
-	
+
 });
 
 // Settings page
