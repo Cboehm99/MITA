@@ -28,7 +28,7 @@ app.use(session({
   resave: false}
 ));
 
-app.use(express.static(process.env.HOME + '/assets'));
+app.use(express.static('./assets'));
 
 // server listens on heroku port or port 9999 for incoming connections
 let port = process.env.PORT;
@@ -41,66 +41,66 @@ app.listen(port);
 // Default page for app is home page
 app.get('/',function(req, res) {
 
-	res.sendFile(process.env.HOME + '/html/home.html');
+	res.sendFile('./html/home.html');
 
 });
 
 //routes user to Login page on clicking train
 app.get('/login',function(req, res) {
 
-	res.sendFile(process.env.HOME + '/html/Login.html');
+	res.sendFile('./html/Login.html');
 
 });
 
 // work around for current lack of a true login session thing
 app.get('/train',function(req, res) {
 	if(req.session.loggedIn){
-		res.sendFile(process.env.HOME + '/html/Train.html');
+		res.sendFile('./html/Train.html');
 	}
 	else{
-		res.sendFile(process.env.HOME + '/html/Disclaimer.html');
+		res.sendFile('./html/Disclaimer.html');
 	}
 });
 
 // About Us page
 app.get('/aboutUs',function(req, res) {
 
-	res.sendFile(process.env.HOME + '/html/AboutUs.html');
+	res.sendFile( './html/AboutUs.html');
 
 });
 
 // FAQ page
 app.get('/faqs',function(req, res) {
 
-	res.sendFile(process.env.HOME + '/html/FAQs.html');
+	res.sendFile( './html/FAQs.html');
 
 });
 
 // Create Account Page
 app.get('/createAccountPage',function(req, res) {
 
-	res.sendFile(process.env.HOME + '/html/CreateAccount.html');
+	res.sendFile( './html/CreateAccount.html');
 
 });
 
 // Information Page
 app.get('/information',function(req, res) {
 
-	res.sendFile(process.env.HOME + '/html/Information.html');
+	res.sendFile( './html/Information.html');
 
 });
 
 // Settings page
 app.get('/settings',function(req, res) {
 
-	res.sendFile(process.env.HOME + '/html/Settings.html');
+	res.sendFile( './html/Settings.html');
 
 });
 
 // Progress page
 app.get('/progress',function(req, res) {
 
-	res.sendFile(process.env.HOME + '/html/Progress.html');
+	res.sendFile( './html/Progress.html');
 
 });
 
