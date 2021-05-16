@@ -22,7 +22,7 @@ app.use(session({
   resave: false}
 ));
 
-app.use(express.static( '/assets'));
+app.use(express.static('train-mita.herokuapp.com' + '/assets'));
 
 // server listens on heroku port or port 9999 for incoming connections
 let port = process.env.PORT;
@@ -35,66 +35,66 @@ app.listen(port);
 // Default page for app is home page
 app.get('/',function(req, res) {
 
-	res.sendFile( '/html/home.html');
+	res.sendFile('train-mita.herokuapp.com' + '/html/home.html');
 
 });
 
 //routes user to Login page on clicking train
 app.get('/login',function(req, res) {
 
-	res.sendFile( '/html/Login.html');
+	res.sendFile('train-mita.herokuapp.com' + '/html/Login.html');
 
 });
 
 // work around for current lack of a true login session thing
 app.get('/train',function(req, res) {
 	if(req.session.loggedIn){
-		res.sendFile( '/html/Train.html');
+		res.sendFile('train-mita.herokuapp.com' + '/html/Train.html');
 	}
 	else{
-		res.sendFile( '/html/Disclaimer.html');
+		res.sendFile('train-mita.herokuapp.com' + '/html/Disclaimer.html');
 	}
 });
 
 // About Us page
 app.get('/aboutUs',function(req, res) {
 
-	res.sendFile( '/html/AboutUs.html');
+	res.sendFile('train-mita.herokuapp.com' + '/html/AboutUs.html');
 
 });
 
 // FAQ page
 app.get('/faqs',function(req, res) {
 
-	res.sendFile( '/html/FAQs.html');
+	res.sendFile('train-mita.herokuapp.com' + '/html/FAQs.html');
 
 });
 
 // Create Account Page
 app.get('/createAccountPage',function(req, res) {
 
-	res.sendFile( '/html/CreateAccount.html');
+	res.sendFile('train-mita.herokuapp.com' + '/html/CreateAccount.html');
 
 });
 
 // Information Page
 app.get('/information',function(req, res) {
 
-	res.sendFile( '/html/Information.html');
+	res.sendFile('train-mita.herokuapp.com' + '/html/Information.html');
 
 });
 
 // Settings page
 app.get('/settings',function(req, res) {
 
-	res.sendFile( '/html/Settings.html');
+	res.sendFile('train-mita.herokuapp.com' + '/html/Settings.html');
 
 });
 
 // Progress page
 app.get('/progress',function(req, res) {
 
-	res.sendFile( '/html/Progress.html');
+	res.sendFile('train-mita.herokuapp.com' + '/html/Progress.html');
 
 });
 
