@@ -13,6 +13,12 @@ var app = express();
 // fs module - provides an API for interacting with the file system
 var fs = require("fs");
 
+
+//File router for routing files
+var router = express.Router();
+
+
+
 // helps in managing user sessions
 var session = require('express-session');
 
@@ -110,3 +116,6 @@ app.post('/postLogin', function(req, res) {
     res.redirect('/train');
 
 });
+
+//add the router
+app.use('/', router);
