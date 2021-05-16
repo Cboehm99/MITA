@@ -22,7 +22,7 @@ app.use(session({
   resave: false}
 ));
 
-app.use(express.static(__dirname + '/Medical_Imaging_Code_Base/assets'));
+app.use(express.static(__dirname + '/Medical_Imaging_Code_Base'));
 
 // server listens on heroku port or port 9999 for incoming connections
 let port = process.env.PORT;
@@ -35,7 +35,7 @@ app.listen(port);
 // Default page for app is home page
 app.get('/',function(req, res) {
 
-	res.sendFile(__dirname + '/Medical_Imaging_Code_Base/html/home.html');
+	res.sendFile(__dirname + '/Medical_Imaging_Code_Base/html/Home.html');
 
 });
 
@@ -110,3 +110,5 @@ app.post('/postLogin', function(req, res) {
     res.redirect('/train');
 
 });
+
+app.use(express.static(__dirname + '/Medical_Imaging_Code_Base/assets'));
