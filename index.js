@@ -13,12 +13,6 @@ var app = express();
 // fs module - provides an API for interacting with the file system
 var fs = require("fs");
 
-
-//File router for routing files
-var router = express.Router();
-
-
-
 // helps in managing user sessions
 var session = require('express-session');
 
@@ -28,7 +22,7 @@ app.use(session({
   resave: false}
 ));
 
-app.use(express.static('./assets'));
+app.use(express.static(__dirname + '/Medical_Imaging_Code_Base'));
 
 // server listens on heroku port or port 9999 for incoming connections
 let port = process.env.PORT;
@@ -41,66 +35,66 @@ app.listen(port);
 // Default page for app is home page
 app.get('/',function(req, res) {
 
-	res.sendFile('./html/home.html');
+	res.sendFile(__dirname + '/html/home.html');
 
 });
 
 //routes user to Login page on clicking train
 app.get('/login',function(req, res) {
 
-	res.sendFile('./html/Login.html');
+	res.sendFile(__dirname + '/html/Login.html');
 
 });
 
 // work around for current lack of a true login session thing
 app.get('/train',function(req, res) {
 	if(req.session.loggedIn){
-		res.sendFile('./html/Train.html');
+		res.sendFile(__dirname + '/html/Train.html');
 	}
 	else{
-		res.sendFile('./html/Disclaimer.html');
+		res.sendFile(__dirname + '/html/Disclaimer.html');
 	}
 });
 
 // About Us page
 app.get('/aboutUs',function(req, res) {
 
-	res.sendFile( './html/AboutUs.html');
+	res.sendFile(__dirname + '/html/AboutUs.html');
 
 });
 
 // FAQ page
 app.get('/faqs',function(req, res) {
 
-	res.sendFile( './html/FAQs.html');
+	res.sendFile(__dirname + '/html/FAQs.html');
 
 });
 
 // Create Account Page
 app.get('/createAccountPage',function(req, res) {
 
-	res.sendFile( './html/CreateAccount.html');
+	res.sendFile(__dirname + '/html/CreateAccount.html');
 
 });
 
 // Information Page
 app.get('/information',function(req, res) {
 
-	res.sendFile( './html/Information.html');
+	res.sendFile(__dirname + '/html/Information.html');
 
 });
 
 // Settings page
 app.get('/settings',function(req, res) {
 
-	res.sendFile( './html/Settings.html');
+	res.sendFile(__dirname + '/html/Settings.html');
 
 });
 
 // Progress page
 app.get('/progress',function(req, res) {
 
-	res.sendFile( './html/Progress.html');
+	res.sendFile(__dirname + '/html/Progress.html');
 
 });
 
@@ -116,6 +110,3 @@ app.post('/postLogin', function(req, res) {
     res.redirect('/train');
 
 });
-
-//add the router
-app.use('/', router);
