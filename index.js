@@ -28,7 +28,7 @@ app.use(session({
   resave: false}
 ));
 
-app.use(express.static(__dirname + '/assets'));
+app.use(express.static(process.env.HOME + '/assets'));
 
 // server listens on heroku port or port 9999 for incoming connections
 let port = process.env.PORT;
@@ -41,66 +41,66 @@ app.listen(port);
 // Default page for app is home page
 app.get('/',function(req, res) {
 
-	res.sendFile(__dirname + '/html/home.html');
+	res.sendFile(process.env.HOME + '/html/home.html');
 
 });
 
 //routes user to Login page on clicking train
 app.get('/login',function(req, res) {
 
-	res.sendFile(__dirname + '/html/Login.html');
+	res.sendFile(process.env.HOME + '/html/Login.html');
 
 });
 
 // work around for current lack of a true login session thing
 app.get('/train',function(req, res) {
 	if(req.session.loggedIn){
-		res.sendFile(__dirname + '/html/Train.html');
+		res.sendFile(process.env.HOME + '/html/Train.html');
 	}
 	else{
-		res.sendFile(__dirname + '/html/Disclaimer.html');
+		res.sendFile(process.env.HOME + '/html/Disclaimer.html');
 	}
 });
 
 // About Us page
 app.get('/aboutUs',function(req, res) {
 
-	res.sendFile(__dirname + '/html/AboutUs.html');
+	res.sendFile(process.env.HOME + '/html/AboutUs.html');
 
 });
 
 // FAQ page
 app.get('/faqs',function(req, res) {
 
-	res.sendFile(__dirname + '/html/FAQs.html');
+	res.sendFile(process.env.HOME + '/html/FAQs.html');
 
 });
 
 // Create Account Page
 app.get('/createAccountPage',function(req, res) {
 
-	res.sendFile(__dirname + '/html/CreateAccount.html');
+	res.sendFile(process.env.HOME + '/html/CreateAccount.html');
 
 });
 
 // Information Page
 app.get('/information',function(req, res) {
 
-	res.sendFile(__dirname + '/html/Information.html');
+	res.sendFile(process.env.HOME + '/html/Information.html');
 
 });
 
 // Settings page
 app.get('/settings',function(req, res) {
 
-	res.sendFile(__dirname + '/html/Settings.html');
+	res.sendFile(process.env.HOME + '/html/Settings.html');
 
 });
 
 // Progress page
 app.get('/progress',function(req, res) {
 
-	res.sendFile(__dirname + '/html/Progress.html');
+	res.sendFile(process.env.HOME + '/html/Progress.html');
 
 });
 
