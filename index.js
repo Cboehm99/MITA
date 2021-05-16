@@ -22,7 +22,7 @@ app.use(session({
   resave: false}
 ));
 
-app.use(express.static(__dirname + '/Medical_Imaging_Code_Base'));
+app.use(express.static(__dirname + '/Medical_Imaging_Code_Base/assets'));
 
 // server listens on heroku port or port 9999 for incoming connections
 let port = process.env.PORT;
@@ -35,66 +35,66 @@ app.listen(port);
 // Default page for app is home page
 app.get('/',function(req, res) {
 
-	res.sendFile(__dirname + '/html/home.html');
+	res.sendFile(__dirname + '/Medical_Imaging_Code_Base/html/home.html');
 
 });
 
 //routes user to Login page on clicking train
 app.get('/login',function(req, res) {
 
-	res.sendFile(__dirname + '/html/Login.html');
+	res.sendFile(__dirname + '/Medical_Imaging_Code_Base/html/Login.html');
 
 });
 
 // work around for current lack of a true login session thing
 app.get('/train',function(req, res) {
 	if(req.session.loggedIn){
-		res.sendFile(__dirname + '/html/Train.html');
+		res.sendFile(__dirname + '/Medical_Imaging_Code_Base/html/Train.html');
 	}
 	else{
-		res.sendFile(__dirname + '/html/Disclaimer.html');
+		res.sendFile(__dirname + '/Medical_Imaging_Code_Base/html/Disclaimer.html');
 	}
 });
 
 // About Us page
 app.get('/aboutUs',function(req, res) {
 
-	res.sendFile(__dirname + '/html/AboutUs.html');
+	res.sendFile(__dirname + '/Medical_Imaging_Code_Base/html/AboutUs.html');
 
 });
 
 // FAQ page
 app.get('/faqs',function(req, res) {
 
-	res.sendFile(__dirname + '/html/FAQs.html');
+	res.sendFile(__dirname + '/Medical_Imaging_Code_Base/html/FAQs.html');
 
 });
 
 // Create Account Page
 app.get('/createAccountPage',function(req, res) {
 
-	res.sendFile(__dirname + '/html/CreateAccount.html');
+	res.sendFile(__dirname + '/Medical_Imaging_Code_Base/html/CreateAccount.html');
 
 });
 
 // Information Page
 app.get('/information',function(req, res) {
 
-	res.sendFile(__dirname + '/html/Information.html');
+	res.sendFile(__dirname + '/Medical_Imaging_Code_Base/html/Information.html');
 
 });
 
 // Settings page
 app.get('/settings',function(req, res) {
 
-	res.sendFile(__dirname + '/html/Settings.html');
+	res.sendFile(__dirname + '/Medical_Imaging_Code_Base/html/Settings.html');
 
 });
 
 // Progress page
 app.get('/progress',function(req, res) {
 
-	res.sendFile(__dirname + '/html/Progress.html');
+	res.sendFile(__dirname + '/Medical_Imaging_Code_Base/html/Progress.html');
 
 });
 
