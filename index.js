@@ -35,7 +35,7 @@ app.listen(port);
 // Default page for app is home page
 app.get('/',function(req, res) {
 
-	res.sendFile(__dirname + '/html/home.html');
+	res.sendFile('/html/home.html');
 
 });
 
